@@ -1,0 +1,5 @@
+New-NetFirewallRule -DisplayName 'Veeam 9191' -Profile @('Domain', 'Private') -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('1991'),
+                    New-NetFirewallRule -DisplayName 'Veeam 9193' -Profile @('Domain', 'Private') -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('1993'),
+                    New-NetFirewallRule -DisplayName 'Veeam 9194' -Profile @('Domain', 'Private') -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('1994'),
+                    Enable-NetFirewallRule -Name 'File and Printer Sharing (SMB-In)',
+                    Set-ItemProperty -Path HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System, -Name 'LocalAccountTokenFilterPolicy', -Value 1
