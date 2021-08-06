@@ -1,0 +1,17 @@
+# Variables for the image gallery and image.
+
+$GalleryResourceGroup = cirrus-rg-cd-aib
+$ImageGalleryName = myImageGallery
+$SourceResourceGroup = cirrus-rg-cd-aib
+$SourceVMName = cirrus-proxy-image-cis2019l2
+$NewImageDefinition = CIS_l2_definition_generalized
+
+# Create some variables for the new VM.
+
+$DeploymentRG = cirrus-server-rg-cd
+$DeploymentLocation = Australia East
+$NewVMName = cirrus-prx-childofimage-cd
+$NewComputerName = cirrus-child
+$DeploymentVNet = cirrus-server-vnet-cd
+$DeploymentSubnetName = cirrus-prx-subnet-cd
+$VMSize = Standard_B2ms
